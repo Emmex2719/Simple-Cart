@@ -1,3 +1,18 @@
+const score = {
+  wins: 0,
+  losses: 0,
+  ties: 0
+}
+
+function updateScore(result) {
+if (result === 'You Win'){
+  score.wins += 1;
+} else if (result === 'You Lose'){
+  score.losses += 1;
+} else if (result === 'Tie'){
+  score.ties += 1;
+}
+}
 
 function rockBtn() {
   let computerMove = ''
@@ -23,9 +38,12 @@ function rockBtn() {
     else if (computerMove ==='Scissors') {
       result = 'You Win';
     }
-    alert(`You picked rock. Computer picked ${computerMove}. ${result}.`)
-}
 
+    updateScore(result);
+
+  alert(`You picked rock. Computer picked ${computerMove}. ${result}.
+  Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+}
 
 function paperBtn() {
   let computerMove = ''
@@ -51,7 +69,10 @@ function paperBtn() {
     else if (computerMove ==='Scissors') {
       result = 'You Lose';
     }
-    alert(`You picked paper. Computer picked ${computerMove}. ${result}.`)
+    updateScore(result);
+
+    alert(`You picked paper. Computer picked ${computerMove}. ${result}.
+    Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 }
 function scissorsBtn() {
   let computerMove = ''
@@ -77,5 +98,33 @@ function scissorsBtn() {
     else if (computerMove ==='Scissors') {
       result = 'Tie';
     }
-    alert(`You picked Scissor. Computer picked ${computerMove}. ${result}.`)
+
+    updateScore(result);
+
+     alert(`You picked Scissors. Computer picked ${computerMove}. ${result}.
+  Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
 }
+function resetBtn(){
+   score.wins = 0;
+   score.losses = 0;
+   score.ties = 0;
+}
+
+
+
+
+
+// const mixedArray = ['apple', 5, 'banana', 10, 'orange', 15, 'grape', 20, 'kiwi', 25, 'melon', 30, 'pear', 35, 'peach', 40, 'plum', 45, 'cherry', 50];
+
+
+// End goal: You should have 2 arrays. One containing strings and the other containing the numbers. The content of both arrays should be in asc order.
+/*
+const mixedArray =['apple', 5, 'banana', 10, 'orange', 15, 'grape', 20, 'kiwi', 25, 'melon', 30, 'pear', 35, 'peach', 40, 'plum', 45, 'cherry', 50];
+
+const numArray = mixedArray.filter(num => typeof num === 'number');
+console.log(numArray);
+
+const strArray = mixedArray.filter(word => typeof word === 'string');
+strArray.sort();
+console.log(strArray);
+*/
