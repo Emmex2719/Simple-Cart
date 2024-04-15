@@ -9,7 +9,7 @@
 
 <body>
   <script>
-    /*
+  // Greeting
     let hour = 17;
     const name = 'EMMEX'
       if (hour >= 6 && hour <= 12){
@@ -19,7 +19,9 @@
         console.log(`Good Afternoon ${name}`);
       }
       else ( console.log(`Good Night ${name}`) );
-      */
+      
+
+      // Discount Checker
     const age = 65;
 
     if (age <= 6 || age >= 65) {
@@ -28,6 +30,33 @@
       console.log('No discount');
     }
 
+    const product1 = {
+      name: 'emmex',
+      price: 100,
+    }
+    const product2 = {
+      name: 'folly',
+      price: 500,
+    }
+    const isSameProduct = (product1, product2) => {
+      if (product1 === product2){
+        return true;
+      }
+      else {
+        return false
+      };
+    }
+    console.log(isSameProduct(product1, product2));
+
+    // convertion to lower case
+    const text = 'GOOD MORNING ';
+    const convertToLowercase = (text) => {
+      return text.toLowerCase();
+    }
+    console.log(convertToLowercase(text));
+
+    //how to repeat a string
+    console.log(text.repeat(3));
   </script>
 </body>
 

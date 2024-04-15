@@ -1,4 +1,20 @@
-let calculation = "";
+let calculation = localStorage.getItem('calculation') || '';
+
+function updateCalculation(value) {
+  calculation += value;
+  console.log(calculation);
+  localStorage.setItem('calculation', calculation);
+}
+function btnClear() {
+  calculation = '';
+  console.log("Cleared");
+}
+function btnEquals() {
+  calculation = eval(calculation);
+  console.log(calculation);
+}
+
+/*
 function btn1() {
   calculation += '1';
   console.log(calculation);
@@ -55,15 +71,9 @@ function btnDecimal() {
   calculation += '.';
   console.log(calculation);
 };
-function btnEquals() {
-  calculation = eval(calculation);
-  console.log(calculation);
-};
 function btnDivide() {
   calculation += '/';
   console.log(calculation);
 };
-function btnClear() {
-  calculation = 0;
-  console.log("Cleared");
-};
+
+*/
